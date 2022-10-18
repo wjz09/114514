@@ -91,12 +91,26 @@ net time /domain
 
 ·······································································
 
-#域内存活主机检测	工具在靶机win7桌面
-NetBIOS
+#域内存活主机检测	工具在靶机win7桌面 上传git-tools （工具\Neiwang）
+1.NetBIOS
+nbtscan.exe 内网网段 #扫描内网网段 
 
-nbtscan.exe 内网网段 #扫描内网网段
+2.arp-scan
+arp-scan.exe -t 网段  不是很好用，建议结合netscan使用s
+
+3.主机ping
+for /L %I in (1,1,254) DO @ping -w 1 -n 1 192.168.52.%I | findstr "TTL="
+来自 192.168.52.138 的回复: 字节=32 时间<1ms TTL=128
+来自 192.168.52.143 的回复: 字节=32 时间<1ms TTL=128
 
 
+#端口扫描
+4.ScanLine (tcp、udp扫描)
+
+sl.exe -h -t 22,80-89,110,445,139,389 -u 53,161 -o ./1.txt -p 192.168.244.1.1-254
+-t tcp端口 -u udp 
+
+5.CS上线端口扫描
 ```
 
 
