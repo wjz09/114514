@@ -34,6 +34,11 @@ tasklist -v	wmic process list brief	#进程查询
 wmic startup get command,caption	#启动项
 
 net statistics workstation #开机时间
+······································································
+wmic脚本工具 wmic_info.rar 已上传
+······································································
+
+
 
 ······································································
 
@@ -60,6 +65,7 @@ arp -a #arp缓存表
 netsh firewall show config #查看防火墙配置
 
 #实现防火墙开启关闭 
+
 //server2003 之后
 netsh advfirewall set allprofiles state on 
 //server2003 之前
@@ -123,6 +129,13 @@ net view /domain
 
 #域内所有计算机
 net view /domain:GOD
+
+#查询所有用户信息
+wmic useraccount get /all
+
+#存在用户信息：都是域管理工具，必须在windows server服务器上才有，
+dsquery user
+
 ```
 
 
