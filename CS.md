@@ -135,7 +135,6 @@ wmic useraccount get /all
 
 #存在用户信息：都是域管理工具，必须在windows server服务器上才有，
 dsquery user
-
 ```
 
 
