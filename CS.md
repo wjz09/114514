@@ -137,7 +137,19 @@ wmic useraccount get /all
 dsquery user
 ```
 
+## 上线web服务器后的横向移动
 
 
 
+1.提权至system
+
+2.创建Beacon SMB 监听器
+
+3.在system主机上进行新建会话，指定SMB监听。
+
+4.在system主机**SMB监听**上进行 net view ,查找在线内网主机
+
+5.在目标机器上进行横向渗透，选择SMB监听，选择**GOD.org**域下用户名密码。
+
+6.上线。
 
